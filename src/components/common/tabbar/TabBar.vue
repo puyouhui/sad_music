@@ -1,17 +1,22 @@
 <template>
+<div>
   <div id="tab-bar">
     <slot></slot>
   </div>
+
+</div>
 </template>
 
 <script>
   export default {
-    name: "TabBar"
+    name: "TabBar",
+    components: {}
   }
 </script>
 
 <style scoped>
   #tab-bar {
+    z-index: 99;
     box-sizing: border-box;
     height: 49px;
     display: flex;

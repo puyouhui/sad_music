@@ -1,5 +1,5 @@
 module.exports = {
-  // 配置路径简写别名
+  // 如果需要配置路径简写别名
   chainWebpack: (config) => {
     config.resolve.alias
       // .set('@', resolve('./src'))

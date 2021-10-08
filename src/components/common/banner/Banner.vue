@@ -2,11 +2,14 @@
 <div class="banner-box">
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201410%2F26%2F225146ajcs19i6n9p1solj.jpg&refer=http%3A%2F%2Fattach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632572247&t=762962311a0d1d8c29baef1ecac96b53" alt=""></div>
-      <div class="swiper-slide"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201410%2F26%2F225146ajcs19i6n9p1solj.jpg&refer=http%3A%2F%2Fattach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632572247&t=762962311a0d1d8c29baef1ecac96b53" alt=""></div>      <div class="swiper-slide"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201410%2F26%2F225146ajcs19i6n9p1solj.jpg&refer=http%3A%2F%2Fattach.bbs.miui.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632572247&t=762962311a0d1d8c29baef1ecac96b53" alt=""></div>
+      <slot></slot>
+
     </div>
-    <!-- Add Pagination -->
-    <!-- <div class="swiper-pagination"></div> -->
+     <!-- 添加分业器 -->
+    <div class="swiper-pagination"></div>
+    </div>
+
+
   </div>
 </div>
 </template>
@@ -19,11 +22,11 @@
     mounted() {
       setTimeout(() => {
         this.mySwiper = new Swiper('.swiper-container', {
-          loopAdditionalSlides: 3,
+          loopAdditionalSlides: 0,
           loop: true,
-          speed: 2000,
+          speed: 1300,
           autoplay: 3000,
-          // pagination: '.swiper-pagination',
+          pagination: '.swiper-pagination',
           dynamicBullets: true,
           // navigation: {
           //   nextEl: '.swiper-button-next',
@@ -32,7 +35,7 @@
           parallax: true,
           observer: true, // 启动动态检查器(OB/观众/观看者)
           observeParents: true, // 修改swiper的父元素时，自动初始化swiper
-          autoplayDisableOnInteraction: false /* 注意此参数，默认为true */
+          autoplayDisableOnInteraction: false,
         });
       }, 100)
     }
@@ -45,7 +48,7 @@
   html,
   body {
     position: relative;
-    height: 100%;
+    /* height: 100%; */
   }
 
   body {
@@ -59,14 +62,13 @@
 
   .banner-box {
     width: 96%;
-    margin: 5px auto;
-    border-radius: 8px;
-    overflow: hidden;
+    margin: 0 auto;
+    height: 146px;
   }
 
   .swiper-container {
     width: 100%;
-    height: 160px;
+    height: 100%;
   }
 
   .swiper-slide {
@@ -93,10 +95,15 @@
   }
 
   .swiper-pagination-bullet {
-    background-color: #ffffff;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #D43C33;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-image: linear-gradient(90deg, #ffb23c 0%, #ff7a1d 100%), linear-gradient( #ffffff, #ffffff) !important;
   }
 </style>

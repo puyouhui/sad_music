@@ -4,6 +4,12 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -13,9 +19,24 @@ li {
   list-style: none;
 }
 
+i {
+  font-style: normal;
+}
+
 input {
   outline: none;
   border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
 }
 
 input:-webkit-autofill {

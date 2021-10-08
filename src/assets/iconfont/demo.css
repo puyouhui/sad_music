@@ -1,22 +1,21 @@
 /* Logo 字体 */
+
 @font-face {
   font-family: "iconfont logo";
   src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834');
-  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix') format('embedded-opentype'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834') format('woff'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834') format('truetype'),
-    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix') format('embedded-opentype'), url('https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834') format('woff'), url('https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834') format('truetype'), url('https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont') format('svg');
 }
 
 .logo {
   font-family: "iconfont logo";
-  font-size: 160px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 /* tabs */
+
 .nav-tabs {
   position: relative;
 }
@@ -48,7 +47,6 @@
   color: #666;
 }
 
-
 #tabs .active {
   border-bottom-color: #f00;
   color: #222;
@@ -58,7 +56,9 @@
   display: none;
 }
 
+
 /* 页面布局 */
+
 .main {
   padding: 30px 100px;
   width: 960px;
@@ -145,7 +145,9 @@
   color: #666;
 }
 
+
 /* markdown 样式 */
+
 .markdown {
   color: #666;
   font-size: 14px;
@@ -323,7 +325,6 @@
   clear: both;
 }
 
-
 .hljs {
   display: block;
   background: white;
@@ -391,14 +392,20 @@
   text-decoration: underline;
 }
 
+
 /* 代码高亮 */
+
+
 /* PrismJS 1.15.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+
+
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
@@ -411,11 +418,9 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
-
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
@@ -439,14 +444,15 @@ code[class*="language-"] ::selection {
 }
 
 @media print {
-
   code[class*="language-"],
   pre[class*="language-"] {
     text-shadow: none;
   }
 }
 
+
 /* Code blocks */
+
 pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
@@ -458,7 +464,9 @@ pre[class*="language-"] {
   background: #f5f2f0;
 }
 
+
 /* Inline code */
+
 :not(pre)>code[class*="language-"] {
   padding: .1em;
   border-radius: .3em;
