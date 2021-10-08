@@ -13,7 +13,7 @@
         <child-history :result_history='result_history'
                        @go_search='go_search_result'
                        @empty_history='empty_history'
-                       v-show='result_history.length>0'
+                       v-show='historyLength'
                        >
         </child-history>
         <recommended @go_search='go_search_result'></recommended>
@@ -92,7 +92,8 @@
       // 判断一下用户是否输入
       go_search_result(wordvalue) {
         // 关于历史记录
-        console.log(this.result_history.length);
+        console.log(this.result_history);
+
         if (this.result_history.length < 8) { //判断数组长度
           this.result_history.unshift(wordvalue) //在数组添加
           localStorage.setItem('result_history', JSON.stringify(this.result_history)) // 在本地储存中保存记录
@@ -164,7 +165,21 @@
 
     },
     created() {
+      if (this.result_history.length == 0) {
+        this.result_history = []
+        localStorage.setItem('result_history', JSON.stringify(this.result_history)) // 在本地储存中保存记录
+      }
       this.result_history = JSON.parse(localStorage.getItem('result_history'))
+    },
+    computed: {
+      // 判断是否显示历史记录
+      historyLength() {
+        if (this.result_history == null || this.result_history.length == 0) {
+          return false
+        } else {
+          return true
+        }
+      }
     }
   }
 </script>

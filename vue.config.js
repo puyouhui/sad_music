@@ -1,18 +1,10 @@
 module.exports = {
+  runtimeCompiler: true,
+  publicPath: './',
   // 如果需要配置路径简写别名
   chainWebpack: (config) => {
     config.resolve.alias
-      // .set('@', resolve('./src'))
-      // .set('components', resolve('./src/components'))
-      // .set('assets', resolve('./src/assets'))
-      // .set('commonjs', resolve('./src/commonjs'))
-      // .set('network', resolve('./src/network'))
-      // .set('views', resolve('./src/views'))
-      //set第一个参数：设置的别名，第二个参数：设置的路径
-      　　　　
   },
-
-
   //配置css转换和rem相关
   css: {
     loaderOptions: {

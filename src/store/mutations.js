@@ -24,6 +24,7 @@ export default {
   },
 
 
+
   // 播放相关功能
   //将单独歌曲添加进播放列表
   SetPlayList(state, data) {
@@ -31,6 +32,12 @@ export default {
     localStorage.setItem('playlist', JSON.stringify(state.songList))
   },
 
+  //当歌曲列表数据为空时把数据初始化为一个数组
+  InitPlayList(state) {
+    console.log(state.songList);
+    state.songList = []
+    localStorage.setItem('playlist', JSON.stringify(state.songList))
+  },
   //初始化歌单，得到最新的数据
   InitializePlayList(state) {
     state.songList = JSON.parse(localStorage.getItem('playlist')) //数据变化，把本地储存歌单给状态管理

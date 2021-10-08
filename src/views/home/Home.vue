@@ -57,7 +57,7 @@
       this.login_store = this.$store.state.login_store
       console.log(this.login_store);
       if (!this.login_store) {
-        // this.$router.replace('/login')
+        this.$router.replace('/login')
       } else {}
     },
 

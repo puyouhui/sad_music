@@ -1,7 +1,7 @@
 <template>
   <div class="audio">
     <div>
-      <audio :src='this.$store.state.song.url' ref='audio' @ended='audioEnd' @timeupdate='timeupdate' autoplay></audio>
+      <audio :src='musicurl' ref='audio' @ended='audioEnd' @timeupdate='timeupdate' autoplay></audio>
     </div>
   </div>
 </template>
@@ -21,12 +21,15 @@
     mounted() {
       // 重新请求url，防止失效
       let urldata = JSON.parse(localStorage.getItem('playsong'))
-      getSongPlayUrl(urldata.id)
-        .then(res => {
-          this.$store.commit('setMusicUrl', res.data.data[0].url)
-          this.$store.commit('InitializeSong')
-        })
-        //初始化给state里面song赋值，防止数据丢失
+      if (urldata != null) {
+        getSongPlayUrl(urldata.id)
+          .then(res => {
+            this.$store.commit('setMusicUrl', res.data.data[0].url)
+            this.$store.commit('InitializeSong')
+          })
+      }
+
+      //初始化给state里面song赋值，防止数据丢失
       this.$store.commit('InitializeSong')
       console.log(this.$store.state.playing);
     },
@@ -90,7 +93,22 @@
     created() {
       let audio = this.$refs.audio //获取audio得DOM
       this.$store.commit('palyIndex') //获取初始index
+      if (songListLength.length == 0) {
+        this.$store.commit('InitPlayList')
+      }
     },
+    computed: {
+      musicurl() {
+        if (this.$store.state.song != undefined) {
+          return this.$store.state.song.url
+        } else {
+          return ''
+        }
+      },
+      songListLength() {
+        return JSON.parse(localStorage('playlist'))
+      }
+    }
   }
 </script>
 
